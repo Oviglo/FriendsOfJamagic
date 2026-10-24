@@ -1,4 +1,4 @@
-gWindow = New Window(1920, 1080, 64, 64, 0, 32, "JamaDASH!", Window.GAME);
+gWindow = New Window(1280, 768, 64, 64, 0, 32, "JamaDASH!", Window.GAME);
 SetDisplayInterface(Display.SOFTWARE_DIRECTDRAW);
 //w = New World();
 //c = New Camera(w);
@@ -7,6 +7,7 @@ gWindowSurface = gWindow.GetSurface();
 gWindowSurface.SetAutoRefresh(OFF);
 gSurface = New Surface(640, 480, 32);
 gSurface.SetAutoRefresh(OFF);
+gWindow.SetFullScreenMode();
 
 DiamondLimit = 0;
 TimeLimit = 3000;
@@ -55,8 +56,8 @@ While(Running)
 		
 		// Blit gSurface on gWindowSurface
 		gSurface.Refresh();
-		gWindowSurface.Stretch(gSurface, 240, 0, gWindowSurface.GetPixelWidth() - 480, gWindowSurface.GetPixelHeight(), TRUE); 
-		//gWindowSurface.Copy(gSurface);
+		//gWindowSurface.Stretch(gSurface, 128, 0, gWindowSurface.GetPixelWidth() - 256, gWindowSurface.GetPixelHeight(), TRUE); 
+		gWindowSurface.Copy(gSurface);
 		gWindowSurface.Refresh();
 		gWindowSurface.Unlock();
 	}
