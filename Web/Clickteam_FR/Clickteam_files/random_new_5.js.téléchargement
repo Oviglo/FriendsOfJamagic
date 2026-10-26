@@ -1,0 +1,41 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+function vcade5(GameID)
+{
+var l = Math.round((screen.availWidth-640)/2);
+var t = Math.round((screen.availHeight-480)/2);
+window.open('https://web.archive.org/web/20040611172605/http://www.clickteam.info/scoreserver/game_pop.php?gameID='+GameID+'','popupr','left='+l+',top='+t+',width=800,height=650,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,copyhistory=no,resizable=no');
+}
+<!--//for really old browsers :-) 
+//this actually writes the link and image to be displayed. 
+var pickit = (Math.round((Math.random()*(6-1))));switch(pickit){case 1:var GameId = 326; var GameName = "Raging Waters"; var sizekb = "76 kb";break;case 2:var GameId = 323; var GameName = "Quick Shot"; var sizekb = "128 kb";break;case 3:var GameId = 322; var GameName = "Critta: Out Of Hand Multiplication 1.1"; var sizekb = "41kb";break;case 4:var GameId = 305; var GameName = "Bean-with-Bacon Megarocket Challenge"; var sizekb = "281 kb";break;case 5:var GameId = 296; var GameName = "Flyin Ace!"; var sizekb = "1.17 Meg";break;default: var GameId = 296; var GameName = "Flyin Ace!";var sizekb = "1.17 Meg";break;}document.write('<table width="100" border="0" cellspacing="0" cellpadding="0"><tr><td align="center" valign="middle"><a href="https://web.archive.org/web/20040611172605/http://www.vitalizeme.com">V-Cade!</a><br><a href="javascript:vcade5('+GameId+')"><img src="https://web.archive.org/web/20040611172605/http://www.clickteam.info/scoreserver/buttons/'+GameId+'.gif" alt="Play Me!" width="100" height="100"></A><br>'+GameName+'<br>'+sizekb+'</td></tr></table>');//-->
+}
+
+/*
+     FILE ARCHIVED ON 17:26:05 Jun 11, 2004 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:28:06 Oct 26, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 1.373
+  captures_list: 0.381
+  exclusion.robots: 0.041
+  exclusion.robots.policy: 0.033
+  esindex: 0.005
+  cdx.remote: 4.619
+  LoadShardBlock: 81.788 (3)
+  PetaboxLoader3.datanode: 60.175 (4)
+  PetaboxLoader3.resolve: 244.272 (2)
+  load_resource: 275.601
+*/

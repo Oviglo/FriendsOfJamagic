@@ -1,0 +1,87 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+if(typeof(loc)=="undefined"||loc==""){var loc="";if(document.body&&document.body.innerHTML){var tt=document.body.innerHTML.toLowerCase();var last=tt.indexOf("camden.js\"");if(last>0){var first=tt.lastIndexOf("\"",last);if(first>0&&first<last)loc=document.body.innerHTML.substr(first+1,last-first-1);}}}
+
+var bd=2
+document.write("<style type=\"text/css\">");
+document.write("\n<!--\n");
+document.write(".camden_menu {border-color:#000000;border-style:solid;border-width:"+bd+"px 0px "+bd+"px 0px;background-color:#dbe3e8;position:absolute;left:0px;top:0px;visibility:hidden;}");
+document.write("a.camden_plain:link, a.camden_plain:visited{text-align:left;background-color:#dbe3e8;color:#cd0909;text-decoration:none;border-color:#000000;border-style:solid;border-width:0px "+bd+"px 0px "+bd+"px;padding:2px 0px 2px 0px;cursor:hand;display:block;font-size:7pt;font-family:Verdana, Arial, Helvetica, sans-serif;}");
+document.write("a.camden_plain:hover, a.camden_plain:active{background-color:#003366;color:#f90000;text-decoration:none;border-color:#000000;border-style:solid;border-width:0px "+bd+"px 0px "+bd+"px;padding:2px 0px 2px 0px;cursor:hand;display:block;font-size:7pt;font-family:Verdana, Arial, Helvetica, sans-serif;}");
+document.write("\n-->\n");
+document.write("</style>");
+
+var fc=0xf90000;
+var bc=0x003366;
+if(typeof(frames)=="undefined"){var frames=0;}
+
+startMainMenu("",0,0,2,0,0)
+mainMenuItem("camden_b1",".gif",12,53,"https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/index.php","","Home",2,2,"camden_plain");
+mainMenuItem("camden_b2",".gif",12,53,"javascript:;","","Produits",2,2,"camden_plain");
+mainMenuItem("camden_b3",".gif",12,53,"javascript:;","","Ressources",2,2,"camden_plain");
+mainMenuItem("camden_b4",".gif",12,53,"javascript:;","","Acheter",2,2,"camden_plain");
+mainMenuItem("camden_b5",".gif",12,53,"javascript:;","","Support",2,2,"camden_plain");
+mainMenuItem("camden_b6",".gif",12,53,"javascript:;","","Info",2,2,"camden_plain");
+mainMenuItem("camden_b7",".gif",12,53,"https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/switch.php","","Anglais",2,2,"camden_plain");
+endMainMenu("",0,0);
+
+startSubmenu("camden_b6","camden_menu",100);
+submenuItem("Société","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/about_us.htm","","camden_plain");
+submenuItem("Liste de diffusion","https://web.archive.org/web/20110604053154/http://www.clickteam.com/mwsubscribe/","_blank","camden_plain");
+submenuItem("Vie privée","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/pp.htm","","camden_plain");
+endSubmenu("camden_b6");
+
+startSubmenu("camden_b5","camden_menu",86);
+submenuItem("Forums","https://web.archive.org/web/20110604053154/http://www.clickteam.com/CTforumF/","","camden_plain");
+submenuItem("FAQ","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/faq.htm","","camden_plain");
+submenuItem("Support E-mail","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/contact.php","","camden_plain");
+endSubmenu("camden_b5");
+
+startSubmenu("camden_b4","camden_menu",109);
+submenuItem("Acheter","https://web.archive.org/web/20110604053154/https://www.clickteam.com/web-shop/index.htm","","camden_plain");
+submenuItem("Comment acheter ?","https://web.archive.org/web/20110604053154/https://www.clickteam.com/web-shop/French/store_help.htm","","camden_plain");
+endSubmenu("camden_b4");
+
+startSubmenu("camden_b3","camden_menu",150);
+submenuItem("Centre de téléchargement","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/ourdownloads.php","","camden_plain");
+submenuItem("La Galerie","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/gallery.php","","camden_plain");
+submenuItem("Sites des utilisateurs","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/user_list.php","","camden_plain");
+submenuItem("Livres","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/books.htm","","camden_plain");
+endSubmenu("camden_b3");
+
+startSubmenu("camden_b2","camden_menu",114);
+submenuItem("Tous les produits","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/products.htm","","camden_plain");
+submenuItem("Multimedia Fusion","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/multimedia_fusion.htm","","camden_plain");
+submenuItem("Jamagic","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/jamagic.htm","","camden_plain");
+submenuItem("Install Creator","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/install_creator.htm","","camden_plain");
+submenuItem("Patch Maker","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/patch_maker.htm","","camden_plain");
+submenuItem("The Games Factory","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/tgf.htm","","camden_plain");
+submenuItem("Vitalize!","https://web.archive.org/web/20110604053154/http://www.clickteam.com/fr/vitalize.htm","","camden_plain");
+endSubmenu("camden_b2");
+
+loc="";
+
+
+}
+
+/*
+     FILE ARCHIVED ON 05:31:54 Jun 04, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:28:07 Oct 26, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.285
+  load_resource: 84.027
+  PetaboxLoader3.datanode: 83.613
+*/

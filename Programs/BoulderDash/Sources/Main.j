@@ -1,13 +1,6 @@
-gWindow = New Window(1280, 768, 64, 64, 0, 32, "JamaDASH!", Window.GAME);
-SetDisplayInterface(Display.SOFTWARE_DIRECTDRAW);
-//w = New World();
-//c = New Camera(w);
-
-gWindowSurface = gWindow.GetSurface();
-gWindowSurface.SetAutoRefresh(OFF);
-gSurface = New Surface(640, 480, 32);
+gWindow = New Window(640, 480, 64, 64, 0, 32, "JamaDASH!", Window.GAME);
+gSurface = gWindow.GetSurface();
 gSurface.SetAutoRefresh(OFF);
-gWindow.SetFullScreenMode();
 
 DiamondLimit = 0;
 TimeLimit = 3000;
@@ -42,7 +35,6 @@ While(Running)
 
 	While(!Complete && Alive)
 	{
-		gWindowSurface.Lock();
 		If(gTic < System.GetElapsedTime())
 		{
 			gTic = System.GetElapsedTime() + 50;
@@ -54,12 +46,7 @@ While(Running)
 	
 		HandleBaddies();
 		
-		// Blit gSurface on gWindowSurface
 		gSurface.Refresh();
-		//gWindowSurface.Stretch(gSurface, 128, 0, gWindowSurface.GetPixelWidth() - 256, gWindowSurface.GetPixelHeight(), TRUE); 
-		gWindowSurface.Copy(gSurface);
-		gWindowSurface.Refresh();
-		gWindowSurface.Unlock();
 	}
 	
 	If (!Alive)
@@ -151,30 +138,30 @@ Function EndTransition()
 	{
 		For(rot = 0; rot < 40; rot++)
 		{
-			gWindowSurface.Rotate(Pi/20, FALSE);
-			gWindowSurface.Stretch(gWindowSurface, 20, 20, 512, 384, 0, 0, gWindowSurface.GetPixelWidth(), gWindowSurface.GetPixelHeight());
-			gWindowSurface.Refresh();
+			gSurface.Rotate(Pi/20, FALSE);
+			gSurface.Stretch(gSurface, 20, 20, 512, 384, 0, 0, 640, 480);
+			gSurface.Refresh();
 			Wait(10);
 		}
 	}
 	Else If (!Alive) // Died! So do a ominous transition (smudgy zoom)
 	{
-		gWindowSurface.SetDrawMode(Surface.BLENDING, 64);
+		gSurface.SetDrawMode(Surface.BLENDING, 64);
 		For(fade = 0; fade < 100; fade += 2)
 		{
-			gWindowSurface.Stretch(gWindowSurface, 0, 0, gWindowSurface.GetPixelWidth(), gWindowSurface.GetPixelHeight(), 16, 16, 608, 448);
+			gWindowSurface.Stretch(gSurface, 0, 0, 640, 480, 16, 16, 608, 448);
 			gWindowSurface.Refresh();
 			Wait(10);
 		}
-		gWindowSurface.SetDrawMode(Surface.COPYALL);
+		gSurface.SetDrawMode(Surface.COPYALL);
 		
 		If (Player.Lives < 0)
 		{
 			For(fade = 255; fade >= 0; fade--)
 			{
-				gWindowSurface.SetBackgroundColor(GetRGB(fade, fade, fade));
-				gWindowSurface.EraseRect();
-				gWindowSurface.Refresh();
+				gSurface.SetBackgroundColor(GetRGB(fade, fade, fade));
+				gSurface.EraseRect();
+				gSurface.Refresh();
 				Wait(10);
 			}
 		}

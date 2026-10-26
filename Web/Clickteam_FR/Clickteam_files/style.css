@@ -1,0 +1,143 @@
+BODY{
+	scrollbar-3d-light-color: #E1E9EF;
+	scrollbar-arrow-color: #003366;
+	scrollbar-base-color: #E1E9EF;
+	scrollbar-dark-shadow-color: #E1E9EF;
+	scrollbar-face-color: #E1E9EF;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #E1E9EF;
+	}
+
+input.search
+{
+	height: 17px;
+	background-color: #E1E9EF;
+	border: solid #000066;
+	border-width: 1px;
+	font-family: tahoma;
+	color: rgb(0,0,70);
+	font-size: 11px;
+	
+}
+
+A:link {
+	color: #003366;
+	text-decoration: none;
+}
+
+A:visited {
+	color: #003366;
+	text-decoration: none;
+}
+
+A:active {
+	color: #003366;
+	text-decoration: none;
+}
+
+A:hover {
+	color: Red;
+	text-decoration: none;
+}
+
+A.dark:link {
+	color: #003366;
+	text-decoration: none;
+}
+
+A.dark:visited {
+	color: #003366;
+	text-decoration: none;
+}
+
+A.dark:active {
+	color: #003366;
+	text-decoration: none;
+}
+
+A.dark:hover {
+	color: Red;
+	text-decoration: none;
+}
+
+TD {
+	font-size: 11px;
+	font-family : Verdana;
+}
+
+P {
+	font-size: 11px;
+	font-family : Verdana;
+}
+
+TD.dark {
+	font-size: 11px;
+	font-family : Tahoma;
+	color : #F0F0F0;
+}
+
+P.dark {
+	font-size: 12px;
+	font-family : Verdana;
+}
+
+TD.smaller {
+	font-size: 11px;
+	font-family : Tahoma;
+	color : #666666;
+}
+
+P.smaller {
+	font-size: 11px;
+	font-family : Tahoma;
+	color : #666666;
+}
+
+TD.mincart {
+	font-size: 10px;
+	font-family : Verdana;
+}
+
+P.mincart {
+	font-size: 10px;
+	font-family : Verdana;
+}
+
+TD.menu {
+	FONT-SIZE: 11px;
+	COLOR: #003366;
+	FONT-FAMILY: Tahoma,Verdana,Arial;
+	font-weight : bold;
+}
+DIV.menu {
+	FONT-SIZE: 11px;
+	COLOR: #003366;
+	FONT-FAMILY: Tahoma,Verdana,Arial;
+	font-weight : bold;
+}
+
+HR {
+	height: 1px;
+	color: #999999;
+}
+/*
+     FILE ARCHIVED ON 20:28:40 Jun 26, 2004 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:28:03 Oct 26, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 4.08
+  captures_list: 0.607
+  exclusion.robots: 0.055
+  exclusion.robots.policy: 0.041
+  esindex: 0.008
+  cdx.remote: 10.294
+  LoadShardBlock: 59.531 (3)
+  PetaboxLoader3.datanode: 92.862 (4)
+  load_resource: 591.198
+  PetaboxLoader3.resolve: 507.593
+*/

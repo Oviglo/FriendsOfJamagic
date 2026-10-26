@@ -1,0 +1,101 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+mymenu = new POTMenu
+// Defines the size of the main menu items, width and height
+mymenu.mainmenuitemsize(137,20)
+// Defines the size of the sub menu items, width and height
+mymenu.submenuitemsize(176,20)
+// Defines the position of the sub menus in relation to the parent
+mymenu.submenuplacing(30,0)
+// Images that make up the border of the main menu. Optional.
+mymenu.mainborderimages("../images/2004/fr/clearpixel.gif","../images/2004/fr/clearpixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif")
+// Corners of the images that make up the main menu border.
+mymenu.mainbordercorners("../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif")
+// Left width, right width and height of the top and bottom of the border
+mymenu.mainborderdimensions(1,1,1)
+// These lines are for the sub menu borders
+mymenu.subborderimages("../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif")
+mymenu.subbordercorners("../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif","../images/2004/fr/greypixel.gif")
+mymenu.subborderdimensions(1,1,1)
+// Main menu cell color
+mymenu.mainmenucolor("#F0F0F0")
+// Sub menu cell color
+mymenu.submenucolor("#F0F0F0")
+// Centers text for Netscape 4.7
+mymenu.netscapeadjust(3,3)
+// The image that is show between the main menu items
+mymenu.definemainspacer("../images/2004/fr/greypixel.gif",1)
+// The image that is show between the sub menu items
+mymenu.definesubspacer("../images/2004/fr/greypixel.gif",1)
+// Do you want to "hide" (SELECT menus, OBJECT tags) when in the menu
+mymenu.hideobjects(true,true)
+// This line is required here
+mymenu.startMenu()
+// Define the main menu.
+mymenu.addMenu("home","  Accueil", "index.php")
+mymenu.addMenu("main","  Produits", "")
+mymenu.addMenu("help","  Ressources", "")
+mymenu.addMenu("services","  Acheter", "")
+mymenu.addMenu("support","  Support", "")
+mymenu.addMenu("info","  Information", "")
+mymenu.addMenu("Anglais","  Anglais", "https://web.archive.org/web/20040626201347/http://www.clickteam.com/fr/switch.php")
+// mymenu.addMenu("faq","O F.A.Q.", "faq.htm")
+// This line is required after the main menu is defined.
+mymenu.showMainMenu()
+// Define the sub menus
+mymenu.addSubMenu("main", "", "  Tous les produits", "products.htm")
+mymenu.addSubMenu("main", "", "  Multimedia Fusion", "multimedia_fusion.htm")
+mymenu.addSubMenu("main", "", "  Jamagic", "jamagic.htm")
+mymenu.addSubMenu("main", "", "  Install Creator", "install_creator.htm")
+mymenu.addSubMenu("main", "", "  Patch Maker", "patch_maker.htm")
+mymenu.addSubMenu("main", "", "  The Games Factory", "tgf.htm")
+mymenu.addSubMenu("main", "", "  Vitalize!", "vitalize.htm")
+
+mymenu.addSubMenu("help", "", "  Centre de téléchargement", "ourdownloads.php")
+mymenu.addSubMenu("help", "", "  La Galerie", "gallery.php")
+mymenu.addSubMenu("help", "", "  Sites des utilisateurs", "user_list.php")
+mymenu.addSubMenu("help", "", "  Livres", "books.htm")
+
+mymenu.addSubMenu("services", "", "  Acheter", "https://web.archive.org/web/20040626201347/https://www.clickteam.com/web-shop/Select_Language.htm")
+mymenu.addSubMenu("services", "", "  Comment acheter ?", "https://web.archive.org/web/20040626201347/https://www.clickteam.com/web-shop/French/store_help.htm")
+
+mymenu.addSubMenu("support", "", "  Forums", "https://web.archive.org/web/20040626201347/http://www.clickteam.com/CTforumF/")
+mymenu.addSubMenu("support", "", "  FAQ", "faq.htm")
+mymenu.addSubMenu("support", "", "  Support E-mail", "contact.php")
+
+mymenu.addSubMenu("info", "", "  A propos ...", "about_us.htm")
+mymenu.addSubMenu("info", "", "  Liste de diffusion", 'https://web.archive.org/web/20040626201347/http://www.clickteam.com/mwsubscribe/" target="_blank')
+mymenu.addSubMenu("info", "", "  Vie privée", "pp.htm")
+
+// This line is required after all menu definitions are finished
+mymenu.showMenu()
+}
+
+/*
+     FILE ARCHIVED ON 20:13:47 Jun 26, 2004 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:28:06 Oct 26, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 7.14
+  captures_list: 0.362
+  exclusion.robots: 0.035
+  exclusion.robots.policy: 0.027
+  esindex: 0.006
+  cdx.remote: 11.52
+  LoadShardBlock: 115.507 (3)
+  PetaboxLoader3.datanode: 142.995 (4)
+  load_resource: 142.399
+  PetaboxLoader3.resolve: 51.074
+*/

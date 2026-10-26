@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0108)https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html -->
+<html style="--wm-toolbar-height: 67px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./How To_ Write Speed-safe Code_files/athena.js.téléchargement" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app221.us.archive.org';v.server_ms=452;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./How To_ Write Speed-safe Code_files/bundle-playback.js.téléchargement" charset="utf-8"></script>
+<script type="text/javascript" src="./How To_ Write Speed-safe Code_files/wombat.js.téléchargement" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./How To_ Write Speed-safe Code_files/ruffle.js.téléchargement"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.clickteam.com:80/English/Jamagic_Tutorials/speedcode.html","20021117181244","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1037556764");
+</script>
+<link rel="stylesheet" type="text/css" href="./How To_ Write Speed-safe Code_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./How To_ Write Speed-safe Code_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+  <title>How To: Write Speed-safe Code</title>
+  <meta name="AUTHOR" content="Philip Boulain, CATT SOFTWARE">
+  <meta name="KEYWORDS" content="Jamagic, speed, machine-independent speed, FPS, smooth, LionsPhil">
+  <meta name="DESCRIPTION" content="Remix of Speed-safe Code article by Philip Boulain (LionsPhil) for Clickteam tutorial site.">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  
+
+  <!-- imported from extras.css, article.css -->
+  <style type="text/css">
+   BODY {
+    background-color: #ffffff;
+    padding: 0; /* Only Opera 6.03 is smart enough to use this. Figures. */
+   }
+
+   DIV.rebody {
+    padding: 0.25cm;
+   }
+
+   H2 {
+    font-family: sans-serif;
+    text-align: center;
+    color: #AA0000;
+   }
+
+   H3 {
+    font-family: "Lucida Sans Unicode", sans-serif;
+    text-align: center;
+    color: #00AA00;
+   }
+
+   P {
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 90%;
+    text-align: center;
+    color: #000000;
+    margin-left: 2em;
+    margin-right: 2em;
+   }
+
+   P.classic {
+    background-color: #000000;
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 90%;
+    text-align: center;
+    background-color: #000000;
+    color: #FFFF00;
+    /* margin-left: 2em; */
+    /* margin-right: 2em; */
+    padding: 0;
+    margin: 0;
+   }
+
+   P.note {
+    font-family: sans-serif;
+    font-size: 70%;
+    font-style: italic;
+    color: #999999; /* was dodo colour */
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+   }
+
+   P.byline {
+    font-family: sans-serif;
+    font-size: 70%;
+    font-style: italic;
+    background-color: #FFFFEE;
+    border-width: 2px;
+    border-color: green;
+    border-style: ridge;
+    color: #404040;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   P.tip {
+    font-size: 80%;
+    background-color: #C0C0C0;
+    border: solid;
+    border-width: 1px;
+    border-color: #333333;
+    color: #000000;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.5em;
+    margin-left: 4em;
+    margin-right: 4em;
+   }
+
+   P.mathsbit {
+    font-size: 80%;
+    color: #777777;
+   }
+
+   P.hashjump {
+    text-align: right;
+    font-size: 60%;
+   }
+
+   SPAN.emp {
+    font-style: italic;
+   }
+
+   SPAN.emp2 {
+    font-weight: bold;
+   }
+
+   A {
+    color: #FF8000;
+    font-weight: bold;
+   }
+
+   A:visited {
+    color: #FF8000;
+    font-weight: bold;
+   }
+
+   A:hover {
+    color: #FFBF00;
+    font-weight: bold;
+   }
+
+   A:active {
+    color: #FFFF00;
+    font-weight: bold;
+   }
+
+   A.tip {
+    background-color: #C0C0C0;
+    color: #0000AA;
+   }
+
+   A.tip:visited {
+    background-color: #C0C0C0;
+    color: #000099;
+   }
+
+   A.tip:hover {
+    background-color: #C0C0C0;
+    color: #0077FF;
+   }
+
+   A.tip:active {
+    background-color: #C0C0C0;
+    color: #00FFFF;
+   }
+
+   A.hashjump { font-weight: normal; }
+   A.hashjump:visited { font-weight: normal; }
+   A.hashjump:hover { font-weight: normal; }
+   A.hashjump:active { font-weight: normal; }
+
+   IMG.title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: none;    /* Both IE 5 and Mozilla 1.1b screw up without these */
+    border-width: 0; /* Opera 6.03, however, is a -good- browser */
+   }
+
+   IMG.w3cvalid {
+    float: right;
+    border-style: none;
+    height: 31px;
+    width: 88px;
+   }
+
+   IMG.tip {
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-left: 1em;
+    margin-right: 1em;
+   }
+
+   PRE.jamacode {
+    border: solid;
+    border-width: 1px;
+    border-color: #333333;
+    background-color: #EEEEEE;
+    color: #000000;
+    font-size: 80%;
+    font-family: monospace;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+   }
+
+   SPAN.jctitle { /* JC example title */
+    color: #DD0000;
+    font-size: 120%;
+    font-weight: bold;
+    padding-left: 3em;
+   }
+
+   SPAN.jcemp { /* JC emphasis (special comment) */
+    color: #0000AA;
+   }
+
+   SPAN.jccom { /* JC comments */
+    color: #00AA00;
+   }
+
+   SPAN.jcarr { /* JC highlight arrow (char ref &#8592;) */
+    color: #FF3333;
+   }
+  </style>
+ </head>
+
+ <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;" class="">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20021117181244/http%3A//www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;" nav="async">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20021117181244"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" title="See a list of every capture for this URL">18 captures</a><div class="r" title="Timespan for captures of this URL">17 Nov 2002 - 28 Jun 2006</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/19981001000000/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="775" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px; left: 50px;"></div><div class="mt" style="display: none; width: 2px; height: 27px; left: 69px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">Oct</td>
+            <td class="c" id="displayMonthEl" title="You are here: 18:12:44 Nov 17, 2002">Nov</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20030320191028/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" title="19:10:28 Mar 20, 2003">Mar</a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><span class="ta"></span></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 18:12:44 Nov 17, 2002">17</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20021215103223/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" title="10:32:23 Dec 15, 2002"><span class="ta"></span></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2001</td>
+            <td class="c" id="displayYearEl" title="You are here: 18:12:44 Nov 17, 2002">2002</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20040224104115/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" title="10:41:15 Feb 24, 2004">2004</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#" title="Share via My Web Archive" style="display: none;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: inline-block;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web" style="display: none;"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20021117181244/http://web.archive.org/screenshot/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#" data-url="https://web.archive.org/web/20021117181244/http://www.clickteam.com:80/English/Jamagic_Tutorials/speedcode.html" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#" data-url="https://web.archive.org/web/20021117181244/http://www.clickteam.com:80/English/Jamagic_Tutorials/speedcode.html" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by" source="api" trigger="hover" token="MY4fDPDjQjrClbTraZd6hYnxI8JwJVcvOTNS6WzNaaIxzxUgFzWkZ2K0"></div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./How To_ Write Speed-safe Code_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./How To_ Write Speed-safe Code_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20021117181244/http://www.clickteam.com:80/English/Jamagic_Tutorials/speedcode.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(775,27,25,2,"web","http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html","20021117181244",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+  <p class="classic">
+   <a href="https://web.archive.org/web/20021117181244/http://www.cattsoft.co.uk/"><img class="title" src="./How To_ Write Speed-safe Code_files/cattsoftraised.png" alt="CATT SOFTWARE" width="375" height="31"></a>
+   <a href="https://web.archive.org/web/20021117181244/http://www.cattsoft.co.uk/extras"><img class="title" src="./How To_ Write Speed-safe Code_files/extras.png" alt="EXTRAS" width="396" height="37"></a>
+  </p>
+ <div class="rebody">
+  <p>
+   <img class="title" src="./How To_ Write Speed-safe Code_files/jamahowto.png" alt="LionsPhil's Jamagic How To:" style="width: 384px; height: 128px;">
+  </p>
+
+  <h2>How To: Write Speed-safe Code</h2>
+
+  <p>
+   Being a true programming language, Jamagic runs everything as fast as it can. Of course, with the diversity of the modern PC, you need to make sure that no-one is left behind by the action.
+  </p>
+
+  <p class="note">
+   Used in Clickteam Jamagic tutorials section with permission. Original version <a href="https://web.archive.org/web/20021117181244/http://www.cattsoft.co.uk/extras/jama/speedcode.html">here</a>.
+  </p>
+
+  <hr>
+
+  <p class="tip">
+   <img class="tip" src="./How To_ Write Speed-safe Code_files/tip_bulb.png" alt="Tip!">
+   All code examples in this "How To" can be found as a Jamagic project <a class="tip" href="https://web.archive.org/web/20021117181244/http://www.cattsoft.co.uk/extras/jama/speedsafecode.zip">in this ZIP archive</a>.
+  </p>
+
+  <h3>The Amazing Cube Enlightens Us</h3>
+
+  <p>
+   You might at first be wondering exactly what I mean. Don't worry; people are <span class="emp">always</span> telling me what 'wonderful' communications skills I have. Try out the following example:
+  </p>
+
+  <pre class="jamacode"><span class="jctitle">Example 01 - The Amazing Cube</span>
+<span class="jcemp">// Before running this, remove the default window creation code from "Project Settings"</span>
+<span class="jccom">// We're just going to use plain, vanilla software mode.
+// This should make any speed differences more apparent.</span>
+SetDisplayInterface(Display.SOFTWARE);
+<span class="jccom">// Create and prepare a window</span>
+winCube=New Window(System.GetScreenWidth()/2,System.GetScreenHeight()/2,,,,,"Initializing");
+winCube.SetAutoRefresh(FALSE);
+winCube.SetAutoClose(FALSE);
+<span class="jccom">// Create a world</span>
+wrlCube=New World();
+<span class="jccom">// Create a surface to make a texture to make a material</span>
+srfYellow=New Surface(32, 32, 8);
+srfYellow.CLEAR(0xFFFF00, 0x000000);
+texCube=New Texture(wrlCube, srfYellow);
+matCube=New Material(wrlCube, texCube, 0xFFFF00, "CubeMaterial");
+<span class="jccom">// Create a cube (it wouldn't be very amazing if it didn't exist)</span>
+objCube=wrlCube.CreateBrick(16,16,16);
+objCube.ApplyMaterial(matCube, TRUE);
+objCube.SetFlat(TRUE);
+<span class="jccom">// Create a camera so that we can actually see all this 3D trickery</span>
+camCube=New Camera(wrlCube, winCube);
+camCube.MoveBack(64);
+<span class="jccom">// Light our brick so that we can make out the sides</span>
+wrlCube.SetGouraud(TRUE);
+<span class="jccom">// Prepare some way to stop the demo (just press a key or close the window)</span>
+booRun=TRUE;
+winCube.OnKeyDown=StopRunning;
+winCube.OnClose=StopRunning;
+While(booRun)
+{
+<span class="jccom">	// Spin the cube a bit</span>
+	objCube.AddAngle(0.03,0.02,0.01);
+<span class="jccom">	// Show the frames per second</span>
+	winCube.SetText("The Amazing Cube - "+Round(camCube.GetSpeed())+" FPS");
+<span class="jccom">	// Update the display</span>
+	Refresh();
+}
+End();
+Function StopRunning()
+{
+	booRun=FALSE;
+}</pre>
+
+  <p>
+   It's a spinning cube. Thrilling huh? No? Well, try running it on a different specification machine.
+  </p>
+  <p class="tip">
+   <img class="tip" src="./How To_ Write Speed-safe Code_files/tip_bulb.png" alt="Tip!">
+   If you don't have another machine to hand, or don't want to go through all the fuss of transferring your project(s), you can simulate a slower machine by setting "Processor usage" to a lower figure in "Project &gt; Settings &gt; Run". This won't directly affect your 3D card however, so if you're using a hardware mode then you may not notice much difference.<br>
+What's more, because Windows gives any window over which the mouse is moving 100% attention, you can set this value right down and compare when the mouse is and is not moving.
+  </p>
+  <p>
+   You'll no doubt find that the cube spins at a different speed (if not, then pay attention and try <span class="emp2">different specification</span> computers). While our happy little cube may not really matter too much, imagine that that was a target in a shooting game, or the ball in a sports game. Someone on a ninja 2GHz beast with a GeForce4Ti would never be able to hit it, while someone hobbling along in software mode on their 500MHz Celeron (yes, I'm the latter) would find it pitifully easy. You need to control the speed so that both can have the same gaming challenge (if not the same silky smooth framerates).
+  </p>
+
+  <h3>Don't Run When You Must Walk</h3>
+  <p>
+   The <span class="emp">simple</span> solution to this problem is to limit the maximum speed at which the code can run (this is by no means the <span class="emp">best</span> solution, which I will get onto a little later, but it <span class="emp">is</span> very well known so deserves mention).
+  </p>
+  <p>
+   Of course, the main problem with this method is that the GeForce 4 owner will find his machine 'wound down' to the same performance as that Celeron (the other problem being the challenge of finding a suitable framerate at which to fix the program).
+  </p>
+  <p>
+   The principle is quite simple - you time how long it takes for your program to execute it's main loop and, if this too short, wait for the remaining time.
+  </p>
+  <p>
+   Modify example 1 by replacing the main 'While' loop with this one (changes marked with '<span class="jcarr">←</span>'):
+  </p>
+
+<pre class="jamacode"><span class="jctitle">Example 02 - The Amazing Cube Strikes Back</span>
+<span class="jcemp">// IMPORTANT: These are just the changes to make to Example 1</span>
+<span class="jccom">// Take a measurement of the current time (in milliseconds)</span>
+intTimeLastLoop=System.GetElapsedTime(); <span class="jcarr">←</span>
+While(booRun)
+{
+<span class="jccom">	// Spin the cube a bit</span>
+	objCube.AddAngle(0.03,0.02,0.01);
+<span class="jccom">	// Show the frames per second</span>
+	winCube.SetText("The Amazing Cube II - "+Round(camCube.GetSpeed())+" FPS");
+<span class="jccom">	// Update the display</span>
+	Refresh();
+<span class="jccom">	// If this frame has taken less than 50ms (equal to 20FPS) then wait</span>
+	While((System.GetElapsedTime()-intTimeLastLoop)&lt;50); <span class="jcarr">←</span>
+<span class="jccom">	// Update time measurement</span>
+	intTimeLastLoop=System.GetElapsedTime(); <span class="jcarr">←</span>
+}</pre>
+
+  <p>
+   Try this on some different computers (or at some different CPU usages) and you'll find that it should never exceed 20FPS. On the other hand, try it out on a very slow computer and the cube will spin much too slowly because the code only corrects for computers that are too fast.
+  </p>
+  <p>
+   There isn't really a case where this is the 'right' method to use (only if you want a very low fixed framerate), so I won't go into too much detail. The time per frame in milliseconds is quite simply 1000 divided by the maximum framerate you want. So 20FPS gives 1000/20 = 50ms.
+  </p>
+
+  <h3>Delta and differentials</h3>
+
+  <p>
+   So, what <span class="emp">is</span> the 'best' way to do speed-safe code? It's really actually quite easy. In fact, it doesn't even require much mathematics (so don't let the subtitle scare you).
+  </p>
+  <p class="mathsbit">
+   <span class="emp2">Scary Maths Bit!</span> If you want to know, the maths behind this is actually quite simple. It's based on the equation Δx = Δt*(Δx/Δt), where Δx is the difference in distance and Δt is the difference in time. Obviously both sides of that equation are the same thing - Δx - because Δx divided by Δt multiplied by Δt is just Δx. The equation shows how to work out Δx (the difference in distance - how much you should move your object by this frame) from Δt (which you can measure, or use 1/framerate) and Δx/Δt (the amount you want your object to move per second).
+  </p>
+  <p>
+   What you want to do is to let Jamagic run as fast as possible, but adjust the amount that is done each frame so that everything happens at the right speed. This is great because it means that fast computers will run the program really smoothly and slow computers in <span class="emp">Jerk-O-Vision</span>™. Basically every computer can do its best without upsetting the action - just like a proper commercial game.
+  </p>
+  <p>
+   It can also make your calculations for when things happen a lot easier. Take our Amazing Cube. Every frame it rotates by (0.03, 0.02, 0.01) - but how much is that? It depends on the framerate. It can be quite hard to relate to 0.03 because it's quite small and you're considering how much it rotates in a tiny fraction of a second.
+  </p>
+  <p>
+   What this 'best' method does is consider how long each frame is. You can either time this with System.GetElapsedTime() like for limiting the framerate or, because it's easier for 3D programs, use Camera.GetSpeed(). Camera.GetSpeed() returns the <span class="emp">framerate</span>, which is the inverse of the frame time. If you're running at two frames per second, then each frame must last half a second. In other words, 2FPS = 1/2s. This means that 1.0/Camera.GetSpeed() is the length of an average frame (in seconds).
+  </p>
+  <p>
+   This makes things a lot easier, because you can now specify all your movement in terms of distance per second. All you have to do is work out the length of a frame and multiply. If you want to move something at a rate of one unit per second, then you just move it by the length of the frame each frame. After one second the sum of the lengths of all the frames will be...one second, so your object will have moved one unit. If you want to move it at two units per second you just double the amount you move it each frame. For rotation, just multiply by 2π (there are 2π radians in a full circle, so if you rotate at 2π radians/second you do one rotation per second).
+  </p>
+  <p>
+   To save working out 1/Camera.GetSpeed() each time you can just do it at the start of the frame. I call it the 'speed coefficient', because it's the number you multiply your speed by. Let's see what this does to our cube (again, replace the While loop from example one - changes marked with '<span class="jcarr">←</span>'):
+  </p>
+
+<pre class="jamacode"><span class="jctitle">Example 03 - Return of the Amazing Cube</span>
+<span class="jcemp">// IMPORTANT: These are just the changes to make to Example 1</span>
+<span class="jccom">// Prepare the speed coefficient. It should be a float because it will</span>
+<span class="jccom">// be a small fraction (each frame is only a little bit of a second).</span>
+<span class="jccom">// 0.05 is a fair guess as a start - equal to 20FPS</span>
+fltSpdCoeff=0.05; <span class="jcarr">←</span>
+While(booRun)
+{
+<span class="jccom">	// At first (or if it goes realllly slow), the camera gives silly FPS readings</span>
+<span class="jccom">	// We must ignore an FPS of zero, because you can't divide by zero</span>
+	If(camCube.GetSpeed()&gt;0) <span class="jcarr">←</span>
+	{ <span class="jcarr">←</span>
+		fltSpdCoeff=1.0/camCube.GetSpeed();<span class="jccom"> // Use 1.0 to force decimals</span> <span class="jcarr">←</span>
+	} <span class="jcarr">←</span>
+<span class="jccom">	// Spin the cube a bit - remember to include the speed coefficient!</span>
+	objCube.AddAngle(3*fltSpdCoeff,2*fltSpdCoeff,fltSpdCoeff); <span class="jcarr">←</span>
+<span class="jccom">	// Show the frames per second</span>
+	winCube.SetText("The Amazing Cube III - "+Round(camCube.GetSpeed())+" FPS");
+<span class="jccom">	// Update the display</span>
+	Refresh();
+}</pre>
+
+  <p>
+   The cube should be spinning as smoothly as it did in example 1. However, if you try a slower machine (or lower CPU usage) you should find that it still spins at the same speed; it's just jerkier. Hooray! Now all the GeForce4 and Celeron owners the world over can unite in peace, because they can all enjoy the same speed of spinning cube yet use their computers to their maximum capability!
+  </p>
+  <p class="note">
+   Neither Philip Boulain nor Catt Software make any guarantees, express or implied, that you can bring about world peace through spinning cubes.
+  </p>
+
+  <h3>Rocket Science</h3>
+  
+  <p>Rotating cubes are very nice, but what about something a bit more complex? Because the speed coefficient is precalculated each frame, it's very simple. Just think about all you motions in terms of distance (either world units, pixels or radians depending on what you're doing) per second. You can even control other things with the time coefficient, like fades or animations (in the latter case, animation frames per second).</p>
+  <p>If you're doing something outside of the 3D engine then you won't be able to use Camera.GetSpeed() and need to instead measure the frame time with System.GetElapsedTime().</p>
+  <p>Here is a cut-down speed-safe version of my <a href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/How%20to%20write%20Speed-safe%20code/index.html">Object Oriented Fireworks</a> demo to show this applied to 2D graphics (the original used the limiting version):</p>
+  <p class="hashjump">[ <a class="hashjump" href="https://web.archive.org/web/20021117181244/http://www.clickteam.com/English/Jamagic_Tutorials/speedcode.html#Example04Below">Skip this example</a> ]</p>
+
+<pre class="jamacode"><span class="jctitle">Example 04 - It's Not Rocket Science, But This Is</span>
+<span class="jcemp">// Quite a few things have been removed to keep this example small, like most of the comments.</span>
+<span class="jcemp">// Again, remember to remove the default window creation code</span>
+<span class="jccom">// Checking for DirectDraw first keeps Linux/Mac/WinNT users happy</span>
+If(Display.IsDisplayInterfaceAvailable(Display.SOFTWARE_DIRECTDRAW))
+{
+	SetDisplayInterface(Display.SOFTWARE_DIRECTDRAW);
+}
+Else
+{
+	SetDisplayInterface(Display.SOFTWARE);
+}
+<span class="jccom">// Miscellaneous Init</span>
+intScreenWidth = System.GetScreenWidth();
+intScreenHeight = System.GetScreenHeight();
+Math.SetRandom(System.GetElapsedTime());
+<span class="jccom">// Create window</span>
+winMain = New Window(intScreenWidth, intScreenHeight,,,,,"Rocket Science");
+winMain.SetAutoRefresh(FALSE);
+winMain.SetFullScreenMode();
+<span class="jccom">// srfMain = New Surface(); // for IntelliSense</span>
+srfMain = winMain.GetSurface();
+srfMain.SetAutoRefresh(FALSE);
+<span class="jccom">// Create objects</span>
+For(intLoop=0;intLoop&lt;32;intLoop++)
+{
+	This.objRocket[intLoop] = New Firework();
+	This.booRocketExists[intLoop] = TRUE;
+}
+intRocketCount = 32;
+objFire[0] = New Fireparticle(objRocket[0]);
+objFire[0].intX = -1;
+booFireExists[0] = TRUE;
+For(intLoop=1;intLoop&lt;1024;intLoop++){booFireExists[intLoop]=FALSE;}
+booRunMainLoop = TRUE;
+winMain.OnKeyDown = HandleKeypress;
+<span class="jccom">// Speed-safe variables</span>
+<span class="jcemp">fltSpeedConstant = 0.05;</span><span class="jccom"> // the speed constant</span>
+<span class="jcemp">intTimeLastLoop = System.GetElapsedTime() - 1;</span><span class="jccom"> // used to time loops</span>
+
+While(booRunMainLoop)
+{
+<span class="jccom">	// Prepare the speed constant
+	// We don't need 1.0/ because this isn't frames per second
+	// Because System.GetElapsedTime() uses milliseconds, divide by 1000.0</span>
+<span class="jcemp">	fltSpeedConstant = (System.GetElapsedTime()-intTimeLastLoop)/1000.0;</span>
+<span class="jccom">	// Update the variable used to time loops</span>
+<span class="jcemp">	intTimeLastLoop = System.GetElapsedTime();</span>
+<span class="jccom">	// When we use the speed constant in this project, we use a speed of 10.
+	// This makes it run at about the same speed as it did with the old limiting
+	// method.</span>
+	
+<span class="jccom">	// CREATION</span>
+	While (((Math.Random(7) &lt; 3) || (intRocketCount &lt; 8)) &amp;&amp; (intRocketCount &lt; 24))
+	{
+		intRocketSlot = 0;
+		For(intLoop=31;intLoop&gt;=0;intLoop--)
+		{
+			If(!booRocketExists[intLoop]){intRocketSlot=intLoop;}
+		}
+		objRocket[intRocketSlot] = New Firework();
+		booRocketExists[intRocketSlot] = TRUE;
+		intRocketCount++;
+	}
+	
+<span class="jccom">	// DISPLAY</span>
+	srfMain.EraseRect();
+	srfMain.Lock();
+	DisableEvents();
+	For(intLoop=0;intLoop&lt;32;intLoop++)
+	{
+		If(booRocketExists[intLoop]){objRocket[intLoop].DrawSelf();}
+	}
+	For(intLoop=0;intLoop&lt;1024;intLoop++)
+	{
+		If(booFireExists[intLoop]){objFire[intLoop].DrawSelf();}
+	}
+	EnableEvents();
+	srfMain.Unlock();
+	srfMain.Refresh();
+	
+<span class="jccom">	// MOVEMENT</span>
+<span class="jcemp">	// This has had to change a little; now we must pass the speed constant
+	// to our objects. This is because these particular objects calculate their
+	// distances to add internally.</span>
+	For(intLoop=0;intLoop&lt;32;intLoop++)
+	{
+		If(booRocketExists[intLoop]){objRocket[intLoop].MoveSelf(<span class="jcemp">fltSpeedConstant</span>);}
+	}
+	For(intLoop=0;intLoop&lt;1024;intLoop++)
+	{
+		If(booFireExists[intLoop]){objFire[intLoop].MoveSelf(<span class="jcemp">fltSpeedConstant</span>);}
+	}
+	
+<span class="jccom">	// EXPIRATION</span>
+	For(intLoop=0;intLoop&lt;32;intLoop++)
+	{
+		If(booRocketExists[intLoop])
+		{
+			If(TestFireworkLife(objRocket[intLoop]))
+			{
+				intExplosionMagnitude = Math.Random(24) + 8;
+				For(intLoop2=1;intLoop2&lt;=intExplosionMagnitude;intLoop2++)
+				{
+					intFireSlot = -1;
+					booKeepLookingForSlot = TRUE;
+					intLoop3 = 1023;
+					While((intLoop3 &gt;= 0) &amp;&amp; (booKeepLookingForSlot))
+					{
+						If(!booFireExists[intLoop3])
+						{
+							intFireSlot=intLoop3;
+							booKeepLookingForSlot = FALSE;
+						}
+						intLoop3--;
+					}
+					If(intFireSlot != -1)
+					{
+<span class="jccom">// (the below line's indenting has been changed to make it fit in your browser window)</span>
+				objFire[intFireSlot] = New Fireparticle(objRocket[intLoop]);
+						booFireExists[intFireSlot] = TRUE;
+					}
+				}
+				Delete objRocket[intLoop];
+				booRocketExists[intLoop] = FALSE;
+				intRocketCount--;
+			}
+		}
+	}
+	For(intLoop=0;intLoop&lt;1024;intLoop++)
+	{
+		If(booFireExists[intLoop])
+		{
+			If(TestFireparticleLife(objFire[intLoop]))
+			{
+				Delete objFire[intLoop];
+				booFireExists[intLoop] = FALSE;
+			}
+		}
+	}
+}
+End();
+
+<span class="jccom">//// FUNCTIONS</span>
+Function LookupHueColourR(fltHue)
+{
+	Return (Cos(fltHue*(Pi()/1.5)))*255;
+}
+Function LookupHueColourG(fltHue)
+{
+	Return (Cos(fltHue*(Pi()/1.5)-(Pi()/1.5)))*255;
+}
+Function LookupHueColourB(fltHue)
+{
+	Return (Cos(fltHue*(Pi()/1.5)+(Pi()/1.5)))*255;
+}
+
+Function HandleKeypress(winWindow, intKey)
+{
+	If(Program.GetChar(intKey)==" "){booRunMainLoop = FALSE;}
+}
+
+Function TestFireworkLife(objFireworkToTest)
+{
+	booExplode = FALSE;
+	If(objFireworkToTest.intFuseLength &lt; 0){booExplode = TRUE;}
+	If(objFireworkToTest.intX &lt; 0){booExplode = TRUE;}
+	If(objFireworkToTest.intX &gt; intScreenWidth){booExplode = TRUE;}
+	If(objFireworkToTest.intY &gt; intScreenHeight){booExplode = TRUE;}
+	Return booExplode;
+}
+
+Function TestFireparticleLife(objFireparticleToTest)
+{
+	Return (objFireparticleToTest.fltBrightness &lt; 0.1);
+}
+
+<span class="jccom">//// CLASSES</span>
+Function Firework()
+{
+	This.intX = Math.Random(intScreenWidth);
+	This.intY = intScreenHeight - 1;
+	This.intXspeed = Math.Random(9) - 4;
+	intLaunchSpeed = intScreenHeight/32;
+	This.intYspeed = -(Math.Random(intLaunchSpeed+1) + intLaunchSpeed);
+	This.fltHue = 3 * Math.Random();
+	This.intFuseLength = Math.Random(32) + 16;
+	This.DrawSelf = Firework_DrawSelf;
+	This.MoveSelf = Firework_MoveSelf;
+}
+
+Function Firework_DrawSelf()
+{
+	intRed = LookupHueColourR(This.fltHue);
+	intGreen = LookupHueColourG(This.fltHue);
+	intBlue = LookupHueColourB(This.fltHue);
+	SetPenSize(4);
+	SetPenColor(Program.GetRGB(intRed, intGreen, intBlue));
+	Line(This.intX,This.intY,This.intX-This.intXspeed,This.intY-This.intYspeed);
+}
+
+Function Firework_MoveSelf(SpeedConstant)
+{
+<span class="jccom">	// This has had to be changed to allow for the speed constant
+	// Note that technically the positions are no longer ints, because we are
+	// modifying them by a fraction. Really they should all be flts (floats).</span>
+<span class="jcemp">	This.intX += (This.intXspeed*fltSpeedConstant*10);
+	This.intY += (This.intYspeed*fltSpeedConstant*10);
+	This.intYspeed+=fltSpeedConstant*10;
+	This.intFuseLength-=fltSpeedConstant*10;</span>
+}
+
+Function Fireparticle(ParentFirework)
+{	
+	This.intX = ParentFirework.intX;
+	This.intY = ParentFirework.intY;
+	This.intXspeed = Math.Random(9)-4 + (ParentFirework.intXspeed/2);
+	This.intYspeed = (Math.Random(9)-4) + (ParentFirework.intYspeed/2);
+	This.fltHue = 3 * Math.Random();
+	This.fltBrightness = (0.5 * Math.Random()) + 0.5;	
+	This.DrawSelf = Fireparticle_DrawSelf;
+	This.MoveSelf = Fireparticle_MoveSelf;
+}
+
+Function Fireparticle_DrawSelf()
+{
+	intRed = LookupHueColourR(This.fltHue);
+	intGreen = LookupHueColourG(This.fltHue);
+	intBlue = LookupHueColourB(This.fltHue);
+	fltBright = This.fltBrightness;
+	SetPenSize(1);
+	SetPenColor(Program.GetRGB(intRed*fltBright,intGreen*fltBright,intBlue*fltBright));
+	SetFillColor(Program.GetRGB(255 * fltBright, 255 * fltBright, 255 * fltBright));
+	intSize = Math.Round(This.fltBrightness * 3) + 1;
+	Ellipse(This.intX-intSize,This.intY-intSize,This.intX+intSize,This.intY+intSize);
+}
+
+Function Fireparticle_MoveSelf(SpeedConstant)
+{
+<span class="jccom">	// This too has had to be changed for the speed constant</span>
+<span class="jcemp">	This.intX += (This.intXspeed*fltSpeedConstant*10);
+	This.intY += (This.intYspeed*fltSpeedConstant*10);
+	This.intYspeed+=fltSpeedConstant*10;</span>
+<span class="jccom">	// Some thought is required for the brightness speed constant
+	// Instead of "*=0.9" we must use "1-(0.1*speedconstant*rate)" so that
+	// a HIGHER speed constant means a HIGHER brightness multiplier so that
+	// it fades SLOWER</span>
+<span class="jcemp">	This.fltBrightness *= 1-(0.1*fltSpeedConstant*10);</span>
+<span class="jccom">	// This next bit is just bounce code so isn't affected by speed</span>
+	If(This.intY &gt;= intScreenHeight)
+	{
+		This.intY = intScreenHeight - 1;
+		This.intYspeed = -(This.intYspeed * 0.4);
+	}
+}</pre>
+  <div><a name="Example04Below"></a></div>
+
+  <p>So now you know how to write speed-safe programs, and it only involved a little bit of mathematics. Enjoy (or, to be more accurate, let people with different computers enjoy)! =)</p>
+
+  <hr>
+
+  <p class="byline">
+   Copyright © 2001,2002 by Philip Boulain. All Rights Reserved. Used in Clickteam tutorial site with permission.
+   <a class="byline" href="https://web.archive.org/web/20021117181244/http://validator.w3.org/check/referer">
+    <img class="w3cvalid" src="./How To_ Write Speed-safe Code_files/valid-html401.png" alt="Valid HTML 4.01!">
+   </a>
+   <a class="byline" href="https://web.archive.org/web/20021117181244/http://jigsaw.w3.org/css-validator">
+    <img class="w3cvalid" src="./How To_ Write Speed-safe Code_files/valid-css.png" alt="Valid CSS!">
+   </a>
+  </p>
+
+ </div>
+ 
+
+
+</body></html>
